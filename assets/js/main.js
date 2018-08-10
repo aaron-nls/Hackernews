@@ -5,8 +5,11 @@ document.addEventListener("DOMContentLoaded",function(){
     /* Wait for stories to load */
     topStories.then(feed => {
         console.log(feed.stories);
-        Promise.all(feed.stories).then(function(stories){
-            document.getElementById('newsfeed').innerHTML = stories;
+        Promise.all(feed.stories).then(function(stories){ let html ='<ol class="list">';
+            for (let i in stories) {
+                html += '<li><h2 class="story__title">'+stories[i].title+'</h2></li>';
+            }
+            document.getElementById('newsfeed').innerHTML = html + '</ol>';
         });
     });
 });
