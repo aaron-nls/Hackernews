@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded",function(){
                 html += '<li itemscope itemtype="http://schema.org/Article"><h2 itemprop="name"><a href="'+stories[i].url+'" target="_blank">'+stories[i].title+'</a></h2><div><span itemprop="author">By: '+stories[i].by+'</span><span datetime="'+ date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() +'"  itemprop="datePublished">Posted: '+ date.getDate() + '-' + date.getMonth() + '-' + date.getFullYear() +'</span></div></li>';
             }
             document.getElementById('newsfeed').innerHTML = html + '</ol>';
+            document.querySelector('body').classList.remove('loading');
         });
     });
 });
