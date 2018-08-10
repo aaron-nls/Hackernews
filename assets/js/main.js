@@ -5,5 +5,8 @@ document.addEventListener("DOMContentLoaded",function(){
     /* Wait for stories to load */
     topStories.then(feed => {
         console.log(feed.stories);
+        Promise.all(feed.stories).then(function(stories){
+            document.getElementById('newsfeed').innerHTML = stories;
+        });
     });
 });
