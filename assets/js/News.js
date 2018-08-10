@@ -1,6 +1,6 @@
 class News {
     constructor(feed) {
-        this.stories = feed;
+        this.stories = feed.slice(0, 10); //Only store 10 for speed
     }
 
     static load(url) {
