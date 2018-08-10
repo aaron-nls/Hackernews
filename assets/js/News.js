@@ -11,7 +11,7 @@ class News {
 
     //Setter
     set stories(feed) {  
-        this._stories=feed;
+        this._stories=feed.map(storyID => fetch('https://hacker-news.firebaseio.com/v0/item/' + storyID + '.json').then(response => response.json()).then(story => story));
     }
 
     // Getter
