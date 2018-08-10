@@ -5,6 +5,7 @@ body,html{
     height: 100%;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
+    background: #eee;
 }
 
 *{
@@ -28,7 +29,7 @@ main{
     height: 300px;
     background: linear-gradient(to right, #ff7400 50%,#ead870 100%);
     position: fixed;
-    box-shadow: 0 0 20px 20px white;
+    box-shadow: 0 0 20px 20px #eee;
     left: 50%;
     top: 50%;
     margin: -150px 0 0 -150px;
@@ -41,7 +42,7 @@ main{
     width: 280px;
     height: 280px;
     position: fixed;
-    background: white;
+    background: #eee;
     left: 50%;
     top: 50%;
     margin: -140px 0 0 -140px;
@@ -51,4 +52,87 @@ main{
 @keyframes loader {
     0%   {transform: rotate(0deg)}
     100% {transform: rotate(360deg)}
+}
+
+
+/* HEADER
+************/
+
+.header{
+    background: #000;
+    color: #fff;
+    padding: 20px 40px;
+}
+
+.header__title{
+    color: #fff;
+    margin: 0;
+}
+
+/* LIST STYLES
+************/
+
+.list{
+    list-style-type: none;
+    padding: 0;
+    margin:0;
+    counter-reset: list; 
+}
+
+.list__item{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* STORY STYLES
+************/
+
+.story{
+    position: relative;
+    margin-left: 100px;
+    border-top: 2px solid black;
+}
+
+.story:before{   
+    counter-increment: list;
+    content: counter(list);
+    position: absolute;
+    left: -100px;
+    height: 100%;
+    width: 90px;
+    background: #505050;
+    color: #d8d7d4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid black;
+    border-left: 10px solid black;
+    top: -2px;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+
+.story__title{
+    color: #fff;
+    background: #c1a571;
+    margin: 0;
+}
+.story__title a{
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    font-size: 1.2rem;
+}
+
+.story__summary{
+    background: #f3f3f3;
+    padding: 10px 15px;
+    color: #505050;
+}
+.story__summary span{
+    display: inline-block;
+    margin-right: 10px;
 }
